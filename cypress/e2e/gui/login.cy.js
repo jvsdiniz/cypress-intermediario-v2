@@ -1,5 +1,5 @@
 describe('empty spec', () => {
-  it('passes', () => {
+  it('login', () => {
     cy.login()
     cy.contains('Welcome to GitLab').should('be.visible')
   })
