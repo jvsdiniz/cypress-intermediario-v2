@@ -1,6 +1,11 @@
-describe('empty spec', () => {
-  it('login', () => {
-    cy.login()
-    cy.contains('Welcome to GitLab').should('be.visible')
+describe('login', () => {
+  it('succesfully', () => {
+    const user = Cypress.env('user_name');
+    const password = Cypress.env('user_password');
+    const options = { cacheSession: false };
+
+    cy.login(user, password, options)
+
+    cy.get('.header-user-avatar').should('be.visible')
   })
 })
